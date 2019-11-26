@@ -4,8 +4,8 @@ other = "View"
 other = "Code"
 [viewAll]
 other = "View All"
-[letsChat]
-other = "Let's Chat"
+[contact]
+other = "Let's get in contact"
 [name]
 other = "Name"
 [email]
@@ -26,7 +26,7 @@ other = "Latest Posts"
 [enableJavaScript]
 other = "Please enable JavaScript to view comments powered by"
 [404Message]
-other = "WHAT DID YOU DO?!"
+other = "Requested page could not be found."
 [themeDevelopedBy]
 other = "Theme developed by"
 [copyright]
