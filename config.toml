@@ -11,7 +11,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use 
 [Params]
     tagline = "Florian Franzen"
     author = "Florian Franzen"
-    description = "Neuroinformatic by day, hacker by night."
+    description = "Architecture | Infrastructure | Research | Leadership"
     logoBig = "/images/effsquared.png"
     logoSmall = "/images/effsquared.png"
     favicon = true
