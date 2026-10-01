@@ -1,12 +1,16 @@
 title = "Florian Franzen"
 baseURL = "https://florian.franzen.io"
 tags = ["portfolio", "web design", "blog"]
-languageCode = "en-US"
+locale = "en-US"
 config = "config.toml"
 canonifyURLS = true
 googleAnalytics = ""
-disqusShortname = ""
-disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use "tag" and "category" taxonomies
+disableKinds = ["taxonomy", "term"]
+
+[services.disqus]
+shortname = ""
+
+[taxonomies] # This theme does not use "tag" and "category" taxonomies
 
 [Params]
     tagline = "Florian Franzen"

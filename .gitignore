@@ -1,0 +1,4 @@
+public/
+resources/
+*.tar.gz
+.hugo_build.lock
