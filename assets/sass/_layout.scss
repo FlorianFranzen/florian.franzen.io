@@ -59,12 +59,17 @@ header {
 }
 
 footer {
-  height: $vertical-rhythm * 6;
+  min-height: $vertical-rhythm * 6;
+  padding: $vertical-rhythm 0;
   background-color: $black;
 
   div,
   a,
   a i.fa { 
     color: $white;
+  }
+
+  > div {
+    padding: $vertical-rhythm / 2 0;
   }
 }

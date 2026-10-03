@@ -1,19 +1,27 @@
 <footer class="row middle-xs center-xs">
 
   {{ if .Site.Params.github }}
-  <div class="col-xs-3 col-md-2"><a target="_blank" rel="noopener" href="https://github.com/{{ .Site.Params.github }}"><i class="fa fa-2x fa-github" title="{{ i18n "github" }}"></i></a></div>
+  <div class="col-xs-4 col-sm-2"><a target="_blank" rel="noopener" href="https://github.com/{{ .Site.Params.github }}"><i class="fa fa-2x fa-github" title="{{ i18n "github" }}"></i></a></div>
+  {{ end }}
+
+  {{ if .Site.Params.gitlab }}
+  <div class="col-xs-4 col-sm-2"><a target="_blank" rel="noopener" href="https://gitlab.com/{{ .Site.Params.gitlab }}"><i class="fa fa-2x fa-gitlab" title="{{ i18n "gitlab" }}"></i></a></div>
   {{ end }}
 
   {{ if .Site.Params.bitbucket }}
-  <div class="col-xs-3 col-md-2"><a target="_blank" rel="noopener" href="https://bitbucket.org/{{ .Site.Params.bitbucket }}"><i class="fa fa-2x fa-bitbucket" title="{{ i18n "bitbucket" }}"></i></a></div>
+  <div class="col-xs-4 col-sm-2"><a target="_blank" rel="noopener" href="https://bitbucket.org/{{ .Site.Params.bitbucket }}"><i class="fa fa-2x fa-bitbucket" title="{{ i18n "bitbucket" }}"></i></a></div>
   {{ end }}
   
   {{ if .Site.Params.linkedin }}
-  <div class="col-xs-3 col-md-2"><a target="_blank" rel="noopener" href="https://linkedin.com/in/{{ .Site.Params.linkedin }}"><i class="fa fa-2x fa-linkedin" title="{{ i18n "linkedin" }}"></i></a></div>
+  <div class="col-xs-4 col-sm-2"><a target="_blank" rel="noopener" href="https://linkedin.com/in/{{ .Site.Params.linkedin }}"><i class="fa fa-2x fa-linkedin" title="{{ i18n "linkedin" }}"></i></a></div>
+  {{ end }}
+
+  {{ if .Site.Params.scholar }}
+  <div class="col-xs-4 col-sm-2"><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user={{ .Site.Params.scholar }}"><i class="fa fa-2x fa-graduation-cap" title="{{ i18n "scholar" }}"></i></a></div>
   {{ end }}
 
   {{ if .Site.Params.keybase }}
-  <div class="col-xs-3 col-md-2"><a target="_blank" rel="noopener" href="https://keybase.io/{{ .Site.Params.keybase }}"><i class="fa fa-2x fa-keybase" title="{{ i18n "keybase" }}"></i></a></div>
+  <div class="col-xs-4 col-sm-2"><a target="_blank" rel="noopener" href="https://keybase.io/{{ .Site.Params.keybase }}"><i class="fa fa-2x fa-keybase" title="{{ i18n "keybase" }}"></i></a></div>
   {{ end }}
 
   {{ if or (.Site.Params.copyright) (.Site.Params.credit) }}

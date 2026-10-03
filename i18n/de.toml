@@ -31,3 +31,7 @@ other = "WAS HAST DU GETAN?!"
 other = "Theme entwickelt von"
 [copyright]
 other = "Copyright"
+[gitlab]
+other = "GitLab"
+[scholar]
+other = "Google Scholar"

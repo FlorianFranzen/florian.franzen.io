@@ -41,3 +41,7 @@ other = "Bitbucket"
 other = "LinkedIn"
 [keybase]
 other = "Keybase"
+[gitlab]
+other = "GitLab"
+[scholar]
+other = "Google Scholar"
