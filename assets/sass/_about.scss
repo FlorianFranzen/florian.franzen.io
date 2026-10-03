@@ -2,6 +2,45 @@
   width: 100%;
   background-color: $smoke;
 
+  h1.tagline {
+    @include size(h2);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: .6em;
+
+    .term {
+      white-space: nowrap;
+
+      &:nth-child(odd) {
+        justify-self: end;
+      }
+
+      &:nth-child(even) {
+        justify-self: start;
+
+        &::before {
+          content: "|";
+          margin-right: .6em;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-medium) {
+      grid-template-columns: auto;
+
+      .term,
+      .term:nth-child(odd),
+      .term:nth-child(even) {
+        justify-self: center;
+      }
+
+      .term:nth-child(even)::before {
+        content: none;
+      }
+    }
+  }
+
   p {
     @include size(h3);
     margin-top: $vertical-rhythm;
