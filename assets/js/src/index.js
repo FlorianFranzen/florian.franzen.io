@@ -30,47 +30,32 @@
     }
   }
 
+  // Open or close the full screen nav; keeps the toggle icon in step with the state
+  function setMenu(open) {
+    menuActive = open
+    $$('.nav-full, main').forEach(function(el) {
+      el.classList.toggle('active', open)
+    })
+    $('.nav-icon img:nth-of-type(1)').style.display = open ? 'none' : 'inline-block'
+    $('.nav-icon img:nth-of-type(2)').style.display = open ? 'inline-block' : 'none'
+    $('html').style.overflowY = open ? 'hidden' : 'scroll'
+  }
+
   // Full screen nav open on click
   $('.nav-icon').addEventListener('click', function() {
-    $$('.nav-full, main').forEach(function(el) {
-      el.classList.toggle('active')
-    })
-    if (menuActive) {
-      this.querySelector('img:nth-of-type(1)').style.display = 'inline-block'
-      this.querySelector('img:nth-of-type(2)').style.display = 'none'
-      menuActive = false
-    } else {
-      this.querySelector('img:nth-of-type(1)').style.display = 'none'
-      this.querySelector('img:nth-of-type(2)').style.display = 'inline-block'
-      menuActive = true
-    }
+    setMenu(!menuActive)
   })
 
   // Full screen nav close on click
-  $$('.nav-full a').forEach(function(links) {
-    links.addEventListener('click', function() {
-      $$('.nav-full, main').forEach(function(el) {
-        el.classList.toggle('active')
-      })
+  $$('.nav-full a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      setMenu(false)
     })
   })
 
   // Fix logoBig drawing over nav when click on logoSmall while nav open
   $('.logo').addEventListener('click', function() {
-    if ($('.nav-full').classList.contains('active')) {
-      $$('.nav-full, main').forEach(function(el) {
-        el.classList.toggle('active')
-      })
-    }
-  })
-
-  // Disable scroll when full screen nav is open
-  $('body').addEventListener('click', function() {
-    if ($('.nav-full').classList.contains('active')) {
-      $('html').style.overflowY = 'hidden'
-    } else {
-      $('html').style.overflowY = 'scroll'
-    }
+    if (menuActive) setMenu(false)
   })
 
   // Mobile browsers viewport height bug fix

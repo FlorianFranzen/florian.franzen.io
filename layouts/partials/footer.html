@@ -25,7 +25,7 @@
   {{ end }}
 
   {{ if or (.Site.Params.copyright) (.Site.Params.credit) }}
-    <div class="col-xs-12">
+    <div class="col-xs-12 copyright">
       {{ if .Site.Params.copyright }}
       {{ i18n "copyright" }} &copy; {{ now.Format "2006" }} {{ .Site.Title }}.
       {{ end }}

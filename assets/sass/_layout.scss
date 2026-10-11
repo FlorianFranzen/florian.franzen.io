@@ -77,6 +77,15 @@ footer {
     color: $accent;
   }
 
+  .copyright,
+  .copyright a {
+    font-size: .8rem;
+  }
+
+  .copyright a:hover {
+    color: $accent;
+  }
+
   > div {
     padding: $vertical-rhythm / 2 0;
   }
