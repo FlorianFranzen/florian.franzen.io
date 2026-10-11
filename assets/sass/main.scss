@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Rubik|Bitter");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,500,600|Bitter");
 @import "flexboxgrid";
 @import "colors";
 @import "typography";
@@ -7,6 +7,7 @@
 @import "base";
 @import "modal";
 @import "about";
+@import "fred";
 @import "gallery";
 
 @media (max-width: 47.99em) {
@@ -255,7 +256,7 @@ input {
 
   &[type="submit"] {
     transition: .2s ease-out;
-    background-color: $storm;
+    background-color: $black;
     color: $white;
 
     &:hover {

@@ -49,6 +49,10 @@ shortname = ""
 #    url  = "/#blog"
 #    weight = 3
 [[menu.main]]
+    name = "Studio"
+    url  = "/#fred"
+    weight = 3
+[[menu.main]]
     name = "Contact"
     url  = "/#contact"
     weight = 4

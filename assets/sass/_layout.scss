@@ -65,8 +65,16 @@ footer {
 
   div,
   a,
-  a i.fa { 
+  a i.fa {
     color: $white;
+  }
+
+  a i.fa {
+    transition: color .2s ease-out;
+  }
+
+  a:hover i.fa {
+    color: $accent;
   }
 
   > div {

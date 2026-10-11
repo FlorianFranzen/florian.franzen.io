@@ -1,0 +1,16 @@
+{{/* Banner for F.R.E.D., the studio: the wordmark (paths copied from fred.build/static/logo.svg)
+     with a one-line description, the whole card is the link. */}}
+<section class="fred" id="fred">
+  <div class="container">
+    <a class="fred-banner" href="https://fred.build" rel="me">
+      <span class="fred-label">My studio</span>
+      <span class="fred-cta">fred.build<span class="fred-arrow" aria-hidden="true">&rarr;</span></span>
+      <span class="fred-mark">{{ (resources.Get "images/fred.svg").Content | safeHTML }}</span>
+      <span class="fred-text">
+        <strong>Franzen Research, Engineering &amp; Development</strong>
+        F.R.E.D. is my prototype studio in Zug: prototyping and embedded development,
+        protocol research, infrastructure, security and teaching.
+      </span>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+// Banner linking to F.R.E.D. (fred.build). Square card in the studio's own register: one hairline
+// border, the wordmark with its marmalade dots, and the same marmalade ($accent) on hover.
+$fred-border: #E6E6E6;
+
+.fred {
+  width: 100%;
+  background-color: $white;
+
+  .container {
+    padding-top: $vertical-rhythm * 3;
+    padding-bottom: $vertical-rhythm * 3;
+  }
+}
+
+.fred-banner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "label cta"
+    "mark  text";
+  align-items: center;
+  column-gap: $vertical-rhythm * 1.25;
+  row-gap: $vertical-rhythm * .75;
+  padding: $vertical-rhythm * .9 $vertical-rhythm;
+  border: 1px solid $fred-border;
+  transition: border-color .2s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $accent;
+
+    .fred-cta {
+      color: $accent;
+    }
+
+    .fred-arrow {
+      transform: translateX(.3em);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 3px;
+  }
+}
+
+.fred-label,
+.fred-cta {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.fred-label {
+  grid-area: label;
+  color: $storm;
+}
+
+.fred-cta {
+  grid-area: cta;
+  justify-self: end;
+  color: $black;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: .95rem;
+  transition: color .2s ease-out;
+}
+
+.fred-arrow {
+  display: inline-block;
+  margin-left: .35em;
+  transition: transform .2s ease-out;
+}
+
+.fred-mark {
+  grid-area: mark;
+  display: block;
+  color: $black;
+
+  svg {
+    display: block;
+    width: auto;
+    height: 2.4rem;
+  }
+}
+
+.fred-text {
+  grid-area: text;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: $black;
+
+  strong {
+    display: block;
+    margin-bottom: .35em;
+    color: $black;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  .fred-banner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "label"
+      "mark"
+      "text"
+      "cta";
+    justify-items: start;
+    row-gap: $vertical-rhythm * .6;
+  }
+
+  .fred-cta {
+    justify-self: start;
+  }
+
+  .fred-mark svg {
+    height: 2rem;
+  }
+}
