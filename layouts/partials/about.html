@@ -6,6 +6,7 @@
       <div class="row center-xs">
         <div class="col-xs-12">
           <h1 class="tagline">{{ with $.Site.GetPage "page" "about" }}{{ range split .Title " | " }}<span class="term">{{ . }}</span>{{ end }}{{ end }}</h1>
+          {{ with ($.Site.GetPage "page" "about").Params.lead }}<p class="lead">{{ . }}</p>{{ end }}
         </div>
       </div>
       <div class="row">

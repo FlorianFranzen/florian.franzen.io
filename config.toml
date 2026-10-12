@@ -15,7 +15,7 @@ shortname = ""
 [Params]
     tagline = "Florian Franzen"
     author = "Florian Franzen"
-    description = "Architecture | Infrastructure | Research | Leadership"
+    description = "Technical leader for complex infrastructure and protocol systems, from specification through implementation, deployment and operations."
     logoBig = "/images/effsquared.png"
     logoSmall = "/images/effsquared.png"
     favicon = true
