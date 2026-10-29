@@ -14,6 +14,7 @@
         <div class="col-xs-12 col-sm-6"><input type="email" id="email" name="email" aria-label="email address" placeholder="{{ i18n "email" }}" required></div>
         <div class="col-xs-12"><input type="text" name="_subject" aria-label="email subject" placeholder="{{ i18n "subject" }}" required></div>
         <div class="col-xs-12"><textarea name="message" aria-label="email message" placeholder="{{ i18n "message" }}" required></textarea></div>
+        <input type="hidden" name="site" value="florian.franzen.io">
         <input type="text" name="website" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="col-xs-12 contact-submit">
           <input id="form-submit" type="submit" value="{{ i18n "send" }}">
