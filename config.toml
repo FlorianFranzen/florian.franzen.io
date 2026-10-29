@@ -26,7 +26,6 @@ shortname = ""
     linkedin = "FlorianFranzen"
     scholar = "OiBuDrsAAAAJ"
     keybase = "FlorianFranzen"
-    email = "mbjljrng"
     googleTagManger = ""
     highlightJS = false
     copyright = true
@@ -34,7 +33,8 @@ shortname = ""
     customCSS = false
     cacheBustCSS = true
     cacheBustJS = true
-    ajaxFormspree = true
+    # Stalwart's contact form (infra: nixos/services/mail/stalwart.nix).
+    contactForm = "https://mail.denkmuskel.org/form"
 
 [[menu.main]]
     name = "About"

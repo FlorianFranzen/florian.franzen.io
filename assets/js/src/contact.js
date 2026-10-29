@@ -1,37 +1,27 @@
 (function() {
   var $ = document.querySelector.bind(document)
+  var form = $('#form-contact')
 
-  $('#form-contact').addEventListener('submit', function(e) {
+  // Stalwart answers {data: {success, details}}, with 200 on success, 400 for
+  // a bad submission and 429 once the rate limit is hit.
+  form.addEventListener('submit', function(e) {
     e.preventDefault()
 
-    // Store form field values
-    var name = $('input[name=name]').value,
-        email = $('input[name=email]').value,
-        subject = $('input[name=_subject]').value,
-        message = $('textarea[name=message]').value,
+    var submit = $('#form-submit'),
+        thanks = $('#form-thankyou'),
+        error = $('#form-error')
 
-        // AJAX request
-        request = new XMLHttpRequest(),
-        data = {
-          name: name,
-          _replyto: email,
-          email: email,
-          _subject: subject,
-          message: message
-        }
+    error.style.display = 'none'
+    submit.disabled = true
 
-    // Send to Formspree or Basin
-    request.open('POST', '{{ if .Site.Params.ajaxFormspree }}https://formspree.io/{{ .Site.Params.email }}{{ else if .Site.Params.ajaxBasin }}{{ .Site.Params.ajaxBasin }}.json{{ end }}', true)
-    request.setRequestHeader('Content-Type', 'application/json')
-    request.setRequestHeader('Accept', 'application/json')
-    // Call function when the state changes
-    request.onreadystatechange = function() {
-      if (request.readyState === 4 && request.status === 200) {
-        // Reset form
-        $('#form-contact').reset()
-
-        var submit = $('#form-submit'),
-            thanks = $('#form-thankyou')
+    fetch(form.action, { method: 'POST', body: new FormData(form) })
+      .then(function(response) {
+        return response.json().catch(function() { return {} }).then(function(json) {
+          if (!response.ok) throw (json.data && json.data.details) || null
+        })
+      })
+      .then(function() {
+        form.reset()
 
         function thankYouFadeIn() {
           // Fade out submit button
@@ -59,9 +49,13 @@
         };
 
         thankYouFadeIn()
-      }
-    }
-
-    request.send(JSON.stringify(data))
+      })
+      .catch(function(details) {
+        error.textContent = typeof details === 'string' ? details : error.dataset.default
+        error.style.display = ''
+      })
+      .then(function() {
+        submit.disabled = false
+      })
   })
 })()

@@ -18,6 +18,8 @@ other = "Message"
 other = "Send"
 [thanksForYourEmail]
 other = "Thanks for your email!"
+[formError]
+other = "Sorry, that did not work. Please try again later."
 [minuteRead]
 one = "One minute read"
 other = "{{.Count}} minutes read"

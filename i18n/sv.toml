@@ -18,6 +18,8 @@ other = "Meddelande"
 other = "Skicka"
 [thanksForYourEmail]
 other = "Tack för ditt mail!"
+[formError]
+other = "Tyvärr fungerade det inte. Försök igen senare."
 [minuteRead]
 other = "minuters läsning"
 [latestPosts]
